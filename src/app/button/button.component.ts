@@ -8,7 +8,7 @@ import { Component, Input, OnInit } from '@angular/core';
 })
 export class ButtonComponent implements OnInit {
   @Input() buttonText = 'ביטול';
-  @Input() backgroundColor ="white";
+  @Input() backgroundColor ="yellow";
   @Input() color ="black";
   @Input() flex = "1 1 0%";
   @Input() padding ="0px";
