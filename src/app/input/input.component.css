@@ -1,0 +1,31 @@
+input {
+    display: flex;
+    border-radius: 16px;
+    border: 1px solid gray;
+    height: 25px;
+    width: 285px;
+    background: transparent;
+    outline: none;
+    font-weight: lighter;
+    box-sizing: content-box;
+    font-size: 14px;
+    padding-left: 1rem;
+    cursor: auto;
+}
+.input-section {
+    display: flex;
+    flex-direction: column;
+}
+.input-container {
+    display: flex;
+    align-items: flex-end;
+    gap: 1rem;
+    margin: 3vh 0 5vh 0;
+}
+i {
+    color:rgb(22, 54, 194);
+}
+label {
+    color: gray;
+    padding-left: 0.5rem;
+}

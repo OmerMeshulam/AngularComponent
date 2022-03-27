@@ -1,0 +1,15 @@
+button {
+    height: 32.8px; 
+    cursor: pointer;
+    font-family: Arial;
+    border-radius: 15px;
+    border: 3px solid black;
+    font-size: 14px;
+    transition: ease-in 0.2s;
+    
+}
+
+button:hover {
+    transform: translateY(-3px);
+    transition: ease-out 0.2s;
+}

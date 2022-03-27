@@ -1,0 +1,40 @@
+.container {
+    width: 350px;
+    box-shadow: 2px 2px gray;
+    border-radius: 5px 5px 5px 5px ;
+}
+hr {
+    background: gray;
+    width: 300px;
+    margin-inline-start: 34px;
+}
+.dropdown {
+    position: absolute;
+    z-index: 1;
+    padding-top: 0.1rem;
+    padding-left: 0.5rem;
+}
+.toggle {
+    position: relative;
+    padding-left: 13.5rem;
+}
+.dropdown-toggle {
+    display: flex;
+    padding-bottom: 1.1rem;
+}
+.button-section {
+    display: flex;
+    position: relative;
+    padding-left: 0.4rem;
+    padding-bottom: 1rem;
+}
+/* .toggle-dropdown-buttons {
+    display: grid;
+    grid-template-columns: repeat(2, auto);
+    grid-template-rows: repeat(2, auto);
+    justify-items: center;
+    align-items: center;
+    padding-bottom: 20px;
+    border-bottom-right-radius: 25px;
+    row-gap: 1rem;
+} */
