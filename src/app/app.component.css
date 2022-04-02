@@ -11,16 +11,16 @@ hr {
 .dropdown {
     position: absolute;
     z-index: 1;
-    padding-top: 0.1rem;
     padding-left: 0.5rem;
+    top: 11.5rem;
 }
 .toggle {
-    position: relative;
     padding-left: 13.5rem;
 }
 .dropdown-toggle {
     display: flex;
-    padding-bottom: 1.1rem;
+    padding-top: 0.4rem;
+    padding-bottom: 1.5rem;
 }
 .button-section {
     display: flex;
@@ -28,13 +28,3 @@ hr {
     padding-left: 0.4rem;
     padding-bottom: 1rem;
 }
-/* .toggle-dropdown-buttons {
-    display: grid;
-    grid-template-columns: repeat(2, auto);
-    grid-template-rows: repeat(2, auto);
-    justify-items: center;
-    align-items: center;
-    padding-bottom: 20px;
-    border-bottom-right-radius: 25px;
-    row-gap: 1rem;
-} */

@@ -1,4 +1,12 @@
 button {
+    --button-color: black;
+    --button-background-color: white;
+    --button-padding: 0px;
+    --button-font-weight: lighter;
+    --button-width: 100px;
+}
+
+button {
     height: 32.8px; 
     cursor: pointer;
     font-family: Arial;

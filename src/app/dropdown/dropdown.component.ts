@@ -1,27 +1,35 @@
-import { Component, ElementRef, OnInit } from '@angular/core';
+import { Component, ElementRef, Input, OnInit } from '@angular/core';
+
 
 @Component({
   selector: 'app-dropdown',
   templateUrl: './dropdown.component.html',
   styleUrls: ['./dropdown.component.css']
 })
-export class DropdownComponent implements OnInit {
-isShowen = false;
-Text = '?מה התחביב שלך';
+export class DropdownComponent {
+  isShowen = false;
+  arrowIcon = 'fa-solid fa-chevron-down';
+  @Input() dropdownLabel: string = "?מה התחביב שלך";
+  @Input() dropdownData: string[] =['תכנות', 'קריאה', 'שירה','כדורגל']; 
+  dropdownPlaceholder: string =this.dropdownData[0];
 
 
-  selectHobbie() {
+  toggleDropdown() {
     this.isShowen = !this.isShowen;
+    if (this.arrowIcon === 'fa-solid fa-chevron-up') {
+      this.arrowIcon = 'fa-solid fa-chevron-down';
+    }
+    else
+    this.arrowIcon = 'fa-solid fa-chevron-up'
+    
   }
-  choosenHobbie(hobbie: any) {
+  selectedData(contentIndex: number) {
     this.isShowen = !this.isShowen;
-    this.Text = hobbie.dataset.value;
+    this.arrowIcon = 'fa-solid fa-chevron-down';
+    this.dropdownPlaceholder = this.dropdownData[contentIndex];
   }
 
 
-  constructor() { }
 
-  ngOnInit(): void {
-  }
 
 }

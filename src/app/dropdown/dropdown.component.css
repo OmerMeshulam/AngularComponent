@@ -30,6 +30,7 @@ li:last-child {
     border-radius:  0 0 10px 10px;
 }
 li {
+    margin: 0;
     display: flex;
     justify-content: space-between;
     color: white;
@@ -43,3 +44,19 @@ li:hover {
     transition: ease-out 0.2s;
 }
 
+label {
+    font-family: Arial;
+    font-size: 14px;
+    color: white;
+    margin-right: 1.2rem;
+    padding-right: 0.5rem;
+    padding-left: 0.5rem;
+    padding-top: 0.1rem;
+    background-color: rgb(49, 44, 44);
+    border-radius: 9px 9px 0px 0px;
+    -webkit-user-select: none;
+}
+.dropdown-label {
+    display: flex;
+    justify-content: space-between;
+}

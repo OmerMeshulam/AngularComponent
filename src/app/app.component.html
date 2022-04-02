@@ -1,7 +1,7 @@
 
 <div class="container">
-  <app-header></app-header>
-  <app-input></app-input>
+  <app-container>
+    <app-input nameInput="[inputValue]"></app-input>
   <hr>
   <app-input inputType="time" inputLabel="זמן" inputIcon="fa-solid fa-clock"></app-input>
   <div class="dropdown-toggle">
@@ -9,8 +9,9 @@
     <app-toggle class="toggle"></app-toggle>
   </div>
     <div class="button-section">
-    <app-button></app-button>
+    <app-button (buttonClicked)="hasClicked($event)"></app-button>
     <app-button 
+    (buttonClicked)="hasClicked($event)"
     [backgroundColor]='backgroundColor' 
     [color]='color' 
     [flex]='flex' 
@@ -18,7 +19,9 @@
     [fontWeight]='fontWeight' 
     [width]='width' 
     [marginRight]='marginRight' 
-     buttonText="שמירה"></app-button>
+     buttonTitle="שמירה"
+     buttonId="save"
+     ></app-button>
   </div>
-
+  </app-container>
 </div>

@@ -1,4 +1,4 @@
-import { Component, Output } from '@angular/core';
+import { Component, EventEmitter, Input, Output } from '@angular/core';
 
 @Component({
   selector: 'app-root',
@@ -7,12 +7,20 @@ import { Component, Output } from '@angular/core';
 })
 export class AppComponent {
   title = 'targil';
-  buttonText = 'ביטול';
-  backgroundColor ="black";
-  color ="white";
+  backgroundColor = "black";
+  color = "white";
   flex = "2 1 0%";
-  padding ="5px 10px";
-  fontWeight ="bold";
+  padding = "5px 10px";
+  fontWeight = "bold";
   width = "230px";
-  marginRight ="0px"
+  marginRight = "0px";
+  nameInput = '';
+  timeInput = '';
+
+  hasClicked(buttonId: string){
+    if (buttonId === 'save') {
+      console.log('The name is: '+ this.nameInput +' ,and the time is: '+ this.timeInput);
+      
+    }
+  }
 }

@@ -1,28 +1,32 @@
-.x-icon, .txt {
+.icon, .header-title {
 color: antiquewhite;
 }
 p {
     padding: 0;
     margin: 0;
 }
-.x-icon {
+.icon {
     font-size: 12px;
     padding-right: 0.3rem;
     cursor: pointer;
 }
-.txt {
+.header-title {
     padding-left: 0.3rem;
     font-size: 17px;
     font-family: Arial;
     -webkit-user-select: none;
 }
 
-.header-container {
-    height: 21px;
+.header-section {
+    height: 17px;
     border-radius: 5px 5px 0 0;
     background-color: black;
     display: flex;
     align-items: center;
     justify-content: space-between;
     padding: 0.2rem 0 0.2rem;
+}
+.container {
+    min-width: 200px;
+    min-height: 150px;
 }

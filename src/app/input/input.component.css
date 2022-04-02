@@ -1,3 +1,8 @@
+
+.inputIcon {
+    --input-icon-color: rgb(22, 54, 194);
+}
+
 input {
     display: flex;
     border-radius: 16px;
@@ -22,8 +27,8 @@ input {
     gap: 1rem;
     margin: 3vh 0 5vh 0;
 }
-i {
-    color:rgb(22, 54, 194);
+.inputIcon {
+    color: var(--input-icon-color);
 }
 label {
     color: gray;

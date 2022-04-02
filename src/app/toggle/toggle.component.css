@@ -1,3 +1,29 @@
+/* variables for when the Toggle is unchecked */
+input + label::before {
+    --unchecked-toggle-icon: "\e076";
+    --unchecked-toggle-icon-color: rgba(192, 12, 12, 0.938);
+}
+input + label {
+    --unchecked-toggle-background-color: rgba(177, 86, 86, 0.637);
+}
+input + label::after {
+    --unchecked-toggle-text: 'לא מחוסן';
+    --unchecked-toggle-text-color: rgba(192, 12, 12, 0.938);
+}
+
+/* variables for when the Toggle is Checked */
+input:checked + label::before {
+    --checked-toggle-icon: "\f48e";
+    --checked-toggle-icon-color: rgba(9, 112, 9, 0.829);
+}
+input:checked + label {
+    --checked-toggle-background-color: rgba(18, 141, 18, 0.664);
+}
+input:checked + label::after {
+    --checked-toggle-text: 'מחוסן';
+    --checked-toggle-text-color: rgba(9, 112, 9, 0.829);
+}
+
 input {
     opacity: 0;
     position: absolute;
@@ -14,7 +40,7 @@ input + label {
     height: 2em;
     width: 5.6em;
     border-radius: 15px;
-    background-color: rgba(177, 86, 86, 0.637);
+    background-color: var(--unchecked-toggle-background-color);
     transition: ease-in-out 0.2s;
     cursor: pointer;
 }
@@ -25,37 +51,37 @@ input + label::before {
     margin-left: 0.15em;
     font-family: "Font Awesome 5 Free";
     font-weight: 900;
-    content: "\e076";
+    content: var(--unchecked-toggle-icon);
     color: rgba(255, 255, 255, 0.637);
     height: 1.8em;
     width: 1.9em;
     border-radius: 1em;
-    background-color: rgba(192, 12, 12, 0.938);
+    background-color: var(--unchecked-toggle-icon-color);
     transition: ease-in-out 0.2s;
 }
 input + label::after {
     position: absolute;
-    content: 'לא מחוסן';
+    content: var(--unchecked-toggle-text);
     left: 2.1em;
-    color: rgba(192, 12, 12, 0.938);
+    color: var(--unchecked-toggle-text-color);
     font-weight: bold;
     transition: ease-in-out 0.2s;
 }
 input:checked + label {
-    background-color: rgba(18, 141, 18, 0.664);
+    background-color: var(--checked-toggle-background-color);
 }
 input:checked + label::before {
     font-family: "Font Awesome 5 Free";
     font-weight: 900;
-    content: "\f48e";
-    color: rgba(109, 250, 109, 0.664);
-    background-color: rgba(9, 112, 9, 0.829);
+    content: var(--checked-toggle-icon);
+    color: rgba(167, 255, 167, 0.644);
+    background-color: var(--checked-toggle-icon-color);
     margin-left: 3.5em;
 }
 input:checked + label::after {
-    content: 'מחוסן';
+    content: var(--checked-toggle-text);
     left: 0.9em;
-    color: rgba(9, 112, 9, 0.829);
+    color: var(--checked-toggle-text-color);
 }
 input:focus + label {
     outline: 2px solid black;
