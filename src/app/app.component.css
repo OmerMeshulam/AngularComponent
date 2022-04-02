@@ -2,6 +2,7 @@
     width: 350px;
     box-shadow: 2px 2px gray;
     border-radius: 5px 5px 5px 5px ;
+    
 }
 hr {
     background: gray;
@@ -12,19 +13,19 @@ hr {
     position: absolute;
     z-index: 1;
     padding-left: 0.5rem;
-    top: 11.5rem;
+    top: -0.4rem;  
 }
 .toggle {
     padding-left: 13.5rem;
 }
 .dropdown-toggle {
+    position: relative;
     display: flex;
     padding-top: 0.4rem;
     padding-bottom: 1.5rem;
 }
 .button-section {
     display: flex;
-    position: relative;
     padding-left: 0.4rem;
     padding-bottom: 1rem;
 }

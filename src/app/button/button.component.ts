@@ -22,9 +22,4 @@ export class ButtonComponent {
     this.buttonClicked.emit(this.buttonId);
   }
 
-  constructor() { }
-
-  ngOnInit(): void {
-  }
-
 }

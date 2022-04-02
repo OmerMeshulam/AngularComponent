@@ -5,14 +5,9 @@ import { Component, Input, OnInit } from '@angular/core';
   templateUrl: './container.component.html',
   styleUrls: ['./container.component.css']
 })
-export class ContainerComponent implements OnInit {
+export class ContainerComponent {
 
   @Input() headerTitle: string = "אירוע חדש";
   @Input() headerIcon: string = "fa-solid fa-x";
-
-  constructor() { }
-
-  ngOnInit(): void {
-  }
 
 }

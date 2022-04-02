@@ -29,7 +29,4 @@ export class DropdownComponent {
     this.dropdownPlaceholder = this.dropdownData[contentIndex];
   }
 
-
-
-
 }

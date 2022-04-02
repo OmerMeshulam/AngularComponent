@@ -8,9 +8,5 @@ import { Component, ElementRef, Input, ViewChild } from '@angular/core';
 export class ToggleComponent {
   
   toggleState = false;
-  
-  constructor() {
-
-  }
 
 }
