@@ -1,29 +1,3 @@
-/* variables for when the Toggle is unchecked */
-input + label::before {
-    --unchecked-toggle-icon: "\e076";
-    --unchecked-toggle-icon-color: rgba(192, 12, 12, 0.938);
-}
-input + label {
-    --unchecked-toggle-background-color: rgba(177, 86, 86, 0.637);
-}
-input + label::after {
-    --unchecked-toggle-text: 'לא מחוסן';
-    --unchecked-toggle-text-color: rgba(192, 12, 12, 0.938);
-}
-
-/* variables for when the Toggle is Checked */
-input:checked + label::before {
-    --checked-toggle-icon: "\f48e";
-    --checked-toggle-icon-color: rgba(9, 112, 9, 0.829);
-}
-input:checked + label {
-    --checked-toggle-background-color: rgba(18, 141, 18, 0.664);
-}
-input:checked + label::after {
-    --checked-toggle-text: 'מחוסן';
-    --checked-toggle-text-color: rgba(9, 112, 9, 0.829);
-}
-
 input {
     opacity: 0;
     position: absolute;

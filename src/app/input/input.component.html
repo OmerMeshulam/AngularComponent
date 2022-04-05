@@ -2,6 +2,9 @@
     <i class="inputIcon" class="{{inputIcon}}"></i>
     <div class="input-section">
     <label for="input">{{inputLabel}}</label>
-    <input id="input" type={{inputType}} placeholder={{inputPlaceholder}} [(ngModel)]="inputValue">
+    <input id="input" type={{inputType}} placeholder={{inputPlaceholder}} 
+    [(ngModel)]="curInputValue"
+    (ngModelChange)="sendValue(curInputValue)">
     </div>
 </div>
+<!-- (keyup)="renderVal(inputValue)" -->

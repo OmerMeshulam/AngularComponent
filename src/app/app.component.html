@@ -1,24 +1,17 @@
 
 <div class="container">
   <app-container>
-    <app-input></app-input>
+    <app-input class="input" [isCancelClicked]='isCancelClicked' (inputValue)="saveNameInput($event)"></app-input>
   <hr>
-  <app-input inputType="time" inputLabel="זמן" inputIcon="fa-solid fa-clock"></app-input>
+  <app-input class="input" [isCancelClicked]='isCancelClicked' (inputValue)="saveTimeInput($event)" inputType="time" inputLabel="זמן" inputIcon="fa-solid fa-clock"></app-input>
   <div class="dropdown-toggle">
-    <app-dropdown class="dropdown"></app-dropdown>
-    <app-toggle class="toggle"></app-toggle>
+    <app-dropdown [isCancelClicked]='isCancelClicked' [dropdownData]='dropdownData' [dropdownLabel]='dropdownLabel' (dropdownContent)="saveDropdownContent($event)" class="dropdown"></app-dropdown>
+    <app-toggle [isCancelClicked]='isCancelClicked' (toggleState)="saveToggleState($event)" class="toggle"></app-toggle>
   </div>
     <div class="button-section">
-    <app-button (buttonClicked)="hasClicked($event)"></app-button>
+    <app-button class="cancel-button" buttonTitle="ביטול" buttonId="cancel" (buttonClicked)="hasClicked($event)"></app-button>
     <app-button 
-    (buttonClicked)="hasClicked($event)"
-    [backgroundColor]='backgroundColor' 
-    [color]='color' 
-    [flex]='flex' 
-    [padding]='padding' 
-    [fontWeight]='fontWeight' 
-    [width]='width' 
-    [marginRight]='marginRight' 
+    (buttonClicked)="hasClicked($event)" 
      buttonTitle="שמירה"
      buttonId="save"
      ></app-button>

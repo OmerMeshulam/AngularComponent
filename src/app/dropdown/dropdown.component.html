@@ -1,8 +1,5 @@
-<div class="dropdown-label">
-    <div class="dot">.</div>
-    <label for="">{{dropdownLabel}}</label>
-</div>
-    <button id="dropdown" (click)="toggleDropdown()"><i class={{arrowIcon}}></i> {{dropdownPlaceholder}} </button>
+<label for="">{{dropdownLabel}}</label>
+    <button id="dropdown" (click)="toggleDropdown()"><i class="fa-solid fa-chevron-down"></i> {{dropdownPlaceholder}} </button>
         <ul *ngIf="isShowen">
             <li *ngFor="let content of dropdownData; let i=index" (click)="selectedData(i)" ><div class="dot">.</div>{{content}}</li>
         </ul>

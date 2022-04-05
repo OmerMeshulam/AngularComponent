@@ -1,23 +1,21 @@
 button {
-    --button-color: black;
-    --button-background-color: white;
-    --button-padding: 0px;
-    --button-font-weight: lighter;
-    --button-width: 100px;
-}
-
-button {
-    height: 32.8px; 
+    height: var(--button-height, 32.8px); 
     cursor: pointer;
     font-family: Arial;
     border-radius: 15px;
     border: 3px solid black;
     font-size: 14px;
     transition: ease-in 0.2s;
-    
+    width: var(--button-width, 200px);
+    color: var(--button-color, black);
+    background-color: var(--button-background-color, transparent);
+    padding: var(--button-padding, 0px);
+    font-weight: var(--button-font-weight, lighter);
 }
 
 button:hover {
+    background-color: var(--button-hover-background-color);
+    color: var(--button-hover-color);
     transform: translateY(-3px);
     transition: ease-out 0.2s;
 }

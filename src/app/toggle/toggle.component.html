@@ -1,5 +1,5 @@
 <div class="toggle-container">
-    <input #checkbox type="checkbox" id="toggle">
-    <label class="toggle" for="toggle"></label>
+    <input unchecked="isCancelClicked" type="checkbox" id="toggle">
+    <label (click)="toggleSwitched()" class="toggle" for="toggle"></label>
 </div>
 

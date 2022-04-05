@@ -1,4 +1,4 @@
-import { Component, Input, OnChanges, Output } from '@angular/core';
+import { Component, Input, Output, EventEmitter, SimpleChange } from '@angular/core';
 
 @Component({
   selector: 'app-input',
@@ -6,19 +6,22 @@ import { Component, Input, OnChanges, Output } from '@angular/core';
   styleUrls: ['./input.component.css']
 })
   
-export class InputComponent {
+export class InputComponent{
   @Input() inputType = 'text';
   @Input() inputLabel = 'שם';
   @Input() inputIcon = 'fa-solid fa-pencil';
   @Input() inputPlaceholder = 'שם מלא';
-  @Output() inputValue = '';
+  @Input() curInputValue = '';
+  @Output() inputValue = new EventEmitter<string>();
+  @Input() isCancelClicked: boolean = false;
 
+  ngOnChanges(changes: SimpleChange){
+    if (this.isCancelClicked) {
+      this.curInputValue = '';
+    }    
+  }
   
-  // ngOnChanges(changes: any){
-  //   console.log(changes
-  //     );
-    
-  //   this.inputValue = changes.inputValue.currentValue;
-  // }
-
+  sendValue(value: string) {
+  this.inputValue.emit(value);
+ }
 }

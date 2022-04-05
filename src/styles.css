@@ -1,1 +1,62 @@
-/* You can add global styles to this file, and also import other style files */
+:root {
+    /* Button CSS Variables */
+    --button-flex: 1 1 0%;
+    --button-width : 100px;
+    --button-color: black;
+    --button-background-color: transparent;
+    --button-padding: 0px;
+    --button-font-weight: lighter;
+    --button-height: 32.8px;
+    --button-hover-color: white;
+    --button-hover-background-color: rgb(90, 88, 88);
+    /* variables for when the Toggle is unchecked */
+    --unchecked-toggle-icon-color: rgba(192, 12, 12, 0.938);
+    --unchecked-toggle-icon: "\e076";
+    --unchecked-toggle-text: 'לא מחוסן';
+    --unchecked-toggle-text-color: rgba(192, 12, 12, 0.938);
+    --unchecked-toggle-background-color: rgba(177, 86, 86, 0.637);
+    /* variables for when the Toggle is Checked */
+    --checked-toggle-icon-color: rgba(9, 112, 9, 0.829);
+    --checked-toggle-icon: "\f48e";
+    --checked-toggle-text: 'מחוסן';
+    --checked-toggle-text-color: rgba(9, 112, 9, 0.829);
+    --checked-toggle-background-color: rgba(18, 141, 18, 0.664);
+    /* Dropdown CSS Variables */
+    --dropdown-background-color: rgb(24, 22, 22);
+    --dropdown-color: white;
+    --dropdown-width: 180px;
+    --dropdown-border-radius: 25px;
+    --dropdown-border: 3px solid rgb(24, 22, 22);
+    --dropdown-font-size: 15px;
+    --dropdown-content-background-color: rgb(36, 33, 33);
+    --dropdown-content-color: white;
+    --dropdown-content-hover-background-color: rgba(48, 44, 44, 0.658);
+    --dropdown-label-color: white;
+    --dropdown-label-background-color: rgb(49, 44, 44);
+    /* Container CSS Variables */
+    --container-title-color: antiquewhite;
+    --container-title-font-size: 17px;
+    --container-icon-color: antiquewhite;
+    --container-icon-font-size: 12px;
+    --container-height: 17px;
+    --container-background-color: black;
+    --container-min-width: 200px;
+    --container-min-height: 150px;
+    /* Input CSS Variables */
+    --input-icon-color: rgb(22, 54, 194);
+    --input-height: 25px;
+    --input-width: 285px;
+    --input-font-size: 14px;
+
+
+}
+
+#save {
+    --button-background-color: black;
+    --button-width : 230px;
+    --button-color: white;
+    --button-font-weight: bold;
+    --button-flex: 2 1 0%;
+    --button-hover-background-color: rgb(218, 214, 214);
+    --button-hover-color: black;
+}

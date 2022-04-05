@@ -1,4 +1,4 @@
-import { Component, ElementRef, Input, ViewChild } from '@angular/core';
+import { Component, Input, SimpleChange, EventEmitter, Output} from '@angular/core';
 
 @Component({
   selector: 'app-toggle',
@@ -6,7 +6,19 @@ import { Component, ElementRef, Input, ViewChild } from '@angular/core';
   styleUrls: ['./toggle.component.css']
 })
 export class ToggleComponent {
-  
-  toggleState = false;
+  @Output() toggleState = new EventEmitter<any>();
+  isToggleState = false;
+  @Input() isCancelClicked: boolean = false;
+
+  ngOnChanges(changes: SimpleChange){
+    if (this.isCancelClicked) {
+      this.isCancelClicked = true;
+    }    
+  }
+
+  toggleSwitched() {
+    this.isToggleState = !this.isToggleState;
+    this.toggleState.emit(this.isToggleState);
+  }
 
 }

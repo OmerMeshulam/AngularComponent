@@ -1,4 +1,4 @@
-import { Component, ElementRef, Input, OnInit } from '@angular/core';
+import { Component, OnInit, EventEmitter, Input, Output, SimpleChange } from '@angular/core';
 
 
 @Component({
@@ -6,27 +6,30 @@ import { Component, ElementRef, Input, OnInit } from '@angular/core';
   templateUrl: './dropdown.component.html',
   styleUrls: ['./dropdown.component.css']
 })
-export class DropdownComponent {
+export class DropdownComponent implements OnInit {
   isShowen = false;
-  arrowIcon = 'fa-solid fa-chevron-down';
-  @Input() dropdownLabel: string = "?מה התחביב שלך";
-  @Input() dropdownData: string[] =['תכנות', 'קריאה', 'שירה','כדורגל']; 
-  dropdownPlaceholder: string =this.dropdownData[0];
+  @Input() dropdownLabel: string = "";
+  @Input() dropdownData: string[] = []; 
+  dropdownPlaceholder: string = '';
+  @Output() dropdownContent = new EventEmitter<string>();
+  selectedContent = '';
+  @Input() isCancelClicked: boolean = false;
 
-
+  ngOnChanges(changes: SimpleChange){
+    if (this.isCancelClicked) {
+      this.dropdownPlaceholder = this.dropdownData[0];
+    }    
+  }
+  ngOnInit() {
+    this.dropdownPlaceholder = this.dropdownData[0];
+  }  
   toggleDropdown() {
-    this.isShowen = !this.isShowen;
-    if (this.arrowIcon === 'fa-solid fa-chevron-up') {
-      this.arrowIcon = 'fa-solid fa-chevron-down';
-    }
-    else
-    this.arrowIcon = 'fa-solid fa-chevron-up'
-    
+    this.isShowen = !this.isShowen;    
   }
   selectedData(contentIndex: number) {
     this.isShowen = !this.isShowen;
-    this.arrowIcon = 'fa-solid fa-chevron-down';
-    this.dropdownPlaceholder = this.dropdownData[contentIndex];
+    this.selectedContent = this.dropdownData[contentIndex];
+    this.dropdownPlaceholder = this.selectedContent;
+    this.dropdownContent.emit(this.selectedContent);
   }
-
 }
