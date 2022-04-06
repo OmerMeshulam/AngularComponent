@@ -8,15 +8,12 @@ import { Component, Input, SimpleChange, EventEmitter, Output} from '@angular/co
 export class ToggleComponent {
   @Output() toggleState = new EventEmitter<any>();
   isToggleState = false;
-  @Input() isCancelClicked: boolean = false;
-  stam = document.querySelector('.checkbox');
+  // @Input() isCancelClicked: boolean = false;
 
-  ngOnChanges(changes: SimpleChange){
-    if (this.isCancelClicked) {
-      console.log(this.stam);
-      
-    }    
-  }
+  // ngOnChanges(changes: SimpleChange){
+  //   if (this.isCancelClicked) {
+  //   }    
+  // }
 
   toggleSwitched() {
     this.isToggleState = !this.isToggleState;

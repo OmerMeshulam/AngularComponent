@@ -46,6 +46,9 @@ export class AppComponent {
       
     }
     if(buttonId === 'cancel'){
+        this.dropdownContent = '';
+        this.nameInput = '';
+        this.timeInput = '';
         this.isCancelClicked = true;
       }
   }
