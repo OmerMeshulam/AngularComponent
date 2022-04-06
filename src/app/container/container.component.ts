@@ -1,4 +1,4 @@
-import { Component, Input } from '@angular/core';
+import { Component, EventEmitter, Input, Output } from '@angular/core';
 
 @Component({
   selector: 'app-container',
@@ -6,8 +6,13 @@ import { Component, Input } from '@angular/core';
   styleUrls: ['./container.component.css']
 })
 export class ContainerComponent {
-
   @Input() headerTitle: string = "אירוע חדש";
   @Input() headerIcon: string = "fa-solid fa-x";
+  @Output() closeContainer = new EventEmitter<boolean>();
+
+
+  onClick() {
+    this.closeContainer.emit();
+  }
 
 }

@@ -1,6 +1,6 @@
 
 <div class="container">
-  <app-container>
+  <app-container (closeContainer)="closeApp=true" *ngIf="!closeApp">
     <app-input class="input" [isCancelClicked]='isCancelClicked' (inputValue)="saveNameInput($event)"></app-input>
   <hr>
   <app-input class="input" [isCancelClicked]='isCancelClicked' (inputValue)="saveTimeInput($event)" inputType="time" inputLabel="זמן" inputIcon="fa-solid fa-clock"></app-input>

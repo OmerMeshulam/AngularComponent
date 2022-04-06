@@ -13,6 +13,7 @@ export class AppComponent {
   toggleContent = 'לא מחוסן';
   dropdownData: string[] = ['תכנות', 'קריאה', 'A.I.','כדורגל'];
   dropdownLabel = '?מה התחביב שלך'
+  closeApp = false;
   isCancelClicked: boolean = false;
 
   saveNameInput(input: string){
@@ -46,7 +47,10 @@ export class AppComponent {
     }
     if(buttonId === 'cancel'){
         this.isCancelClicked = true;
-
       }
+  }
+
+  hideContainer(){
+
   }
 }

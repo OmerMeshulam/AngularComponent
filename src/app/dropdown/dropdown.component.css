@@ -10,17 +10,8 @@ button {
     font-size: var(--dropdown-font-size, 15px);
     transition: ease-in 1s;
 }
-button > i{
-    transition: ease-in-out 0.3s;
-}
-button:focus > i{
-    transform: rotateZ(-180deg);
-    transition: ease-in-out 0.3s;
-}
-button:focus + ul{
-    transition: ease-in-out 1s;
-}
- ul{
+
+ul{
     list-style-type: none;
     padding: 0;
     background-color: var(--dropdown-content-background-color, rgb(36, 33, 33));
@@ -65,9 +56,4 @@ label {
     background-color: var(--dropdown-label-background-color, rgb(49, 44, 44));
     border-radius: 9px 9px 0px 0px;
     -webkit-user-select: none;
-}
-
-.dropdown-label {
-    
-    
 }
