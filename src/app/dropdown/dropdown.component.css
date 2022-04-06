@@ -30,7 +30,7 @@ button:focus + ul{
     transition: ease-in 1s;
 }
 .dot {
-    display: none;
+    opacity: 0;
 }
 li:first-child {
     border-radius: 10px 10px 0 0;
@@ -58,11 +58,16 @@ label {
     color: var(--dropdown-label-color, white);
     margin-right: 1.2rem;
     margin-left: 2.75rem;
-    padding-bottom: 0.05rem;
+    padding-bottom: 0.1rem;
     padding-right: 0.5rem;
     padding-left: 0.5rem;
     padding-top: 0.1rem;
     background-color: var(--dropdown-label-background-color, rgb(49, 44, 44));
     border-radius: 9px 9px 0px 0px;
     -webkit-user-select: none;
+}
+
+.dropdown-label {
+    
+    
 }

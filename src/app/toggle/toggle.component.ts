@@ -9,10 +9,12 @@ export class ToggleComponent {
   @Output() toggleState = new EventEmitter<any>();
   isToggleState = false;
   @Input() isCancelClicked: boolean = false;
+  stam = document.querySelector('.checkbox');
 
   ngOnChanges(changes: SimpleChange){
     if (this.isCancelClicked) {
-      this.isCancelClicked = true;
+      console.log(this.stam);
+      
     }    
   }
 
