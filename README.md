@@ -1,6 +1,5 @@
 # Targil
-
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 13.3.0.
+Small project for praticing the core basics of Angular. A form component made out of smaller components, that logs and resets the inputs a user Enters. 
 
 ## Development server
 
