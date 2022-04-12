@@ -12,7 +12,7 @@ export class DropdownComponent implements OnInit {
   @Input() dropdownLabel: string = "";
   @Input() dropdownData: string[] = []; 
   dropdownPlaceholder: string = '';
-  @Output() dropdownContent = new EventEmitter<string>();
+  @Output() onChoose = new EventEmitter<string>();
   selectedContent = '';
   @Input() isCancelClicked: boolean = false;
 
@@ -38,6 +38,6 @@ export class DropdownComponent implements OnInit {
     this.isShowen = !this.isShowen;
     this.selectedContent = this.dropdownData[contentIndex];
     this.dropdownPlaceholder = this.selectedContent;
-    this.dropdownContent.emit(this.selectedContent);
+    this.onChoose.emit(this.selectedContent);
   }
 }

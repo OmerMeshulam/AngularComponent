@@ -1,5 +1,5 @@
 <label for="">{{dropdownLabel}}</label>
     <button id="dropdown" (click)="toggleDropdown()"><i class={{dropdownIcon}}></i> {{dropdownPlaceholder}} </button>
         <ul *ngIf="isShowen">
-            <li *ngFor="let content of dropdownData; let i=index" (click)="selectedData(i)" ><div class="dot">.</div>{{content}}</li>
+            <li *ngFor="let content of dropdownData; let i=index" (click)="selectedData(i)">{{content}}</li>
         </ul>

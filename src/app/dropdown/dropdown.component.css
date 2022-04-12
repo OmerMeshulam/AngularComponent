@@ -20,9 +20,6 @@ ul{
     border-radius: 10px;
     transition: ease-in 1s;
 }
-.dot {
-    opacity: 0;
-}
 li:first-child {
     border-radius: 10px 10px 0 0;
 }
@@ -31,7 +28,7 @@ li:last-child {
 }
 li {
     display: flex;
-    justify-content: space-between;
+    justify-content: flex-end;
     color: var(--dropdown-content-color, white);
     padding: 0.2rem;
     font-family: Arial;

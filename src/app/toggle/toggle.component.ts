@@ -6,18 +6,12 @@ import { Component, Input, SimpleChange, EventEmitter, Output} from '@angular/co
   styleUrls: ['./toggle.component.css']
 })
 export class ToggleComponent {
-  @Output() toggleState = new EventEmitter<any>();
-  isToggleState = false;
-  // @Input() isCancelClicked: boolean = false;
-
-  // ngOnChanges(changes: SimpleChange){
-  //   if (this.isCancelClicked) {
-  //   }    
-  // }
-
+  @Output() onChange = new EventEmitter<boolean>();
+  toggleState = false;
+  
   toggleSwitched() {
-    this.isToggleState = !this.isToggleState;
-    this.toggleState.emit(this.isToggleState);
+    this.toggleState = !this.toggleState;
+    this.onChange.emit(this.toggleState);
   }
 
 }

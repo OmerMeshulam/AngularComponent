@@ -8,7 +8,7 @@
     --button-font-weight: lighter;
     --button-height: 32.8px;
     --button-hover-color: white;
-    --button-hover-background-color: rgb(90, 88, 88);
+    --button-hover-background-color: rgb(33, 33, 33);
     /* variables for when the Toggle is unchecked */
     --unchecked-toggle-icon-color: rgba(192, 12, 12, 0.938);
     --unchecked-toggle-icon: "\e076";
