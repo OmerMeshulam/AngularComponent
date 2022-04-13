@@ -1,6 +1,5 @@
 import { Component, OnInit, EventEmitter, Input, Output, SimpleChange } from '@angular/core';
 
-
 @Component({
   selector: 'app-dropdown',
   templateUrl: './dropdown.component.html',
