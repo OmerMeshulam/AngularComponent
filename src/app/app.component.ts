@@ -9,23 +9,24 @@ export class AppComponent {
   title = 'targil';
   nameInput = '';
   timeInput = '';
-  toggleState = false;
+  isChecked = false;
   toggleContent = '';
   dropdownData: string[] = ['תכנות', 'קריאה', 'A.I.','כדורגל'];
   dropdownLabel = '?מה התחביב שלך'
   dropdownPlaceholder = 'בחר תחביב';
-  dropdownContent = 'בחר תחביב';
+  dropdownContent = '';
   closeApp = false;
 
   hasClicked(buttonId: string){
     console.log(buttonId +' button Clicked...');
-    if(this.toggleState){
+    if(this.isChecked){
       this.toggleContent = 'מחוסן';
     }
     else{
     this.toggleContent = 'לא מחוסן';
     }
     if (buttonId === 'save') {
+        // Prevents logging the initial selected Placeholder...
       if(this.dropdownPlaceholder === 'בחר תחביב'){
         this.dropdownContent = '';
       }
@@ -44,9 +45,7 @@ export class AppComponent {
     }
         this.nameInput = '';
         this.timeInput = '';
-        this.toggleState = false;
-        console.log();
-        
+        this.isChecked = false;       
       }
   }
 }

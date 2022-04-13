@@ -6,10 +6,7 @@
   <app-input class="input" [(inputValue)]="timeInput" inputType="time" inputLabel="זמן" inputIcon="fa-solid fa-clock"></app-input>
   <div class="dropdown-toggle">
     <app-dropdown [dropdownData]='dropdownData' [dropdownLabel]='dropdownLabel' class="dropdown" [(dropdownPlaceholder)]="dropdownPlaceholder"></app-dropdown>
-
-    <!-- (onChoose)="saveDropdownContent($event)"
-         [isCancelClicked]="isCancelClicked" -->
-    <app-toggle [(isChecked)]="toggleState" class="toggle"></app-toggle>
+    <app-toggle [(isChecked)]="isChecked" class="toggle"></app-toggle>
   </div>
     <div class="button-section">
     <app-button class="cancel-button" buttonTitle="ביטול" buttonId="cancel" (buttonClicked)="hasClicked($event)"></app-button>
