@@ -1,28 +1,18 @@
-import { Component, OnInit, EventEmitter, Input, Output, SimpleChange } from '@angular/core';
+import { Component, EventEmitter, Input, Output, SimpleChange } from '@angular/core';
 
 @Component({
   selector: 'app-dropdown',
   templateUrl: './dropdown.component.html',
   styleUrls: ['./dropdown.component.css']
 })
-export class DropdownComponent implements OnInit {
+export class DropdownComponent {
   isShowen = false;
   dropdownIcon = 'fa-solid fa-chevron-down';
   @Input() dropdownLabel: string = "";
   @Input() dropdownData: string[] = []; 
-  dropdownPlaceholder: string = '';
-  @Output() onChoose = new EventEmitter<string>();
+  @Input() dropdownPlaceholder: string = '';
+  @Output() dropdownPlaceholderChange = new EventEmitter<string>();
   selectedContent = '';
-  @Input() isCancelClicked: boolean = false;
-
-  ngOnChanges(changes: SimpleChange){
-    if (this.isCancelClicked) {
-      this.dropdownPlaceholder = this.dropdownData[0];
-    }    
-  }
-  ngOnInit() {
-    this.dropdownPlaceholder = this.dropdownData[0];
-  }  
   toggleDropdown() {
     if(this.dropdownIcon == 'fa-solid fa-chevron-up'){
       this.dropdownIcon = 'fa-solid fa-chevron-down';
@@ -37,6 +27,6 @@ export class DropdownComponent implements OnInit {
     this.isShowen = !this.isShowen;
     this.selectedContent = this.dropdownData[contentIndex];
     this.dropdownPlaceholder = this.selectedContent;
-    this.onChoose.emit(this.selectedContent);
+    this.dropdownPlaceholderChange.emit(this.dropdownPlaceholder);
   }
 }

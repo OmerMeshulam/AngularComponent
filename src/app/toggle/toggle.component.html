@@ -1,5 +1,5 @@
 <div class="toggle-container">
-    <input class="checkbox" type="checkbox" id="toggle">
-    <label (click)="toggleSwitched()" class="toggle" for="toggle"></label>
+    <input (change)="toggleSwitched()" class="checkbox" type="checkbox" id="toggle" [(ngModel)]="isChecked">
+    <label class="toggle" for="toggle"></label>
 </div>
 

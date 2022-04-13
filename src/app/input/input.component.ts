@@ -6,22 +6,15 @@ import { Component, Input, Output, EventEmitter, SimpleChange } from '@angular/c
   styleUrls: ['./input.component.css']
 })
   
-export class InputComponent{
-  @Input() inputType = 'text';
-  @Input() inputLabel = 'שם';
-  @Input() inputIcon = 'fa-solid fa-pencil';
-  @Input() inputPlaceholder = 'שם מלא';
-  @Input() curInputValue = '';
-  @Output() inputValue = new EventEmitter<string>();
-  @Input() isCancelClicked: boolean = false;
-
-  ngOnChanges(changes: SimpleChange){
-    if (this.isCancelClicked) {
-      this.curInputValue = '';
-    }    
-  }
+export class InputComponent {
+  @Input() inputType = '';
+  @Input() inputLabel = '';
+  @Input() inputIcon = '';
+  @Input() inputPlaceholder = '';
+  @Input() inputValue = '';
+  @Output() inputValueChange = new EventEmitter<string>();
   
   sendValue(value: string) {
-  this.inputValue.emit(value);
+  this.inputValueChange.emit(value);
  }
 }

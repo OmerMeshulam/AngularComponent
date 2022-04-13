@@ -8,7 +8,7 @@ import { Component, EventEmitter, Input, Output } from '@angular/core';
 export class ContainerComponent {
   @Input() headerTitle: string = "אירוע חדש";
   @Input() headerIcon: string = "fa-solid fa-x";
-  @Output() closeContainer = new EventEmitter<boolean>();
+  @Output() closeContainer = new EventEmitter();
 
 
   onClick() {
