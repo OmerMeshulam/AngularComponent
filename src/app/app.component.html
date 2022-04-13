@@ -1,6 +1,6 @@
 
 <div class="container">
-  <app-container (closeContainer)="closeApp=true" *ngIf="!closeApp">
+  <app-container headerTitle="אירוע חדש" (closeContainer)="closeApp=true" *ngIf="!closeApp">
     <app-input class="input" [(inputValue)]="nameInput" inputType="text" inputLabel="שם" inputIcon="fa-solid fa-pencil" inputPlaceholder="שם מלא"></app-input>
   <hr>
   <app-input class="input" [(inputValue)]="timeInput" inputType="time" inputLabel="זמן" inputIcon="fa-solid fa-clock"></app-input>

@@ -6,8 +6,7 @@ import { Component, EventEmitter, Input, Output } from '@angular/core';
   styleUrls: ['./container.component.css']
 })
 export class ContainerComponent {
-  @Input() headerTitle: string = "אירוע חדש";
-  @Input() headerIcon: string = "fa-solid fa-x";
+  @Input() headerTitle = '';
   @Output() closeContainer = new EventEmitter();
 
 
