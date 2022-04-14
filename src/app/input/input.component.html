@@ -3,8 +3,7 @@
     <div class="input-section">
     <label for="input">{{inputLabel}}</label>
     <input id="input" type={{inputType}} placeholder={{inputPlaceholder}} 
-    [(ngModel)]="curInputValue"
-    (ngModelChange)="sendValue(curInputValue)">
+    [(ngModel)]="inputValue"
+    (ngModelChange)="sendValue(inputValue)">
     </div>
 </div>
-<!-- (keyup)="renderVal(inputValue)" -->

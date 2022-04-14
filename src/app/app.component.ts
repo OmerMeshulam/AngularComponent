@@ -9,51 +9,43 @@ export class AppComponent {
   title = 'targil';
   nameInput = '';
   timeInput = '';
-  dropdownContent = '';
-  toggleContent = 'לא מחוסן';
+  isChecked = false;
+  toggleContent = '';
   dropdownData: string[] = ['תכנות', 'קריאה', 'A.I.','כדורגל'];
   dropdownLabel = '?מה התחביב שלך'
+  dropdownPlaceholder = 'בחר תחביב';
+  dropdownContent = '';
   closeApp = false;
-  isCancelClicked: boolean = false;
 
-  saveNameInput(input: string){
-    this.nameInput = input;
-    this.isCancelClicked = false;
-  }
-  saveTimeInput(input: string){
-    this.timeInput = input;    
-    this.isCancelClicked = false;
-  }
-  saveDropdownContent(content: string){
-    this.dropdownContent = content;
-    this.isCancelClicked = false;
-  }
-  saveToggleState(state: boolean) {
-    if(state){
+  hasClicked(buttonId: string){
+    console.log(buttonId +' button Clicked...');
+    if(this.isChecked){
       this.toggleContent = 'מחוסן';
     }
     else{
     this.toggleContent = 'לא מחוסן';
     }
-    this.isCancelClicked = false;
-  }
-
-  hasClicked(buttonId: string){
-    console.log(buttonId +' button Clicked...');
     if (buttonId === 'save') {
+        // Prevents logging the initial selected Placeholder...
+      if(this.dropdownPlaceholder === 'בחר תחביב'){
+        this.dropdownContent = '';
+      }
+      else {
+        this.dropdownContent = this.dropdownPlaceholder;
+      }
       console.log('Your Name is: '+ this.nameInput +', the Time is: '+ this.timeInput +', your Hobbie is: '+ this.dropdownContent +', and you are: '+ this.toggleContent);  
-      this.isCancelClicked = false; 
-      
     }
     if(buttonId === 'cancel'){
-        this.dropdownContent = '';
+      if(this.dropdownPlaceholder !== 'בחר תחביב'){
+      setTimeout(() => {
+        this.dropdownPlaceholder = 'בחר תחביב';
+        this.dropdownContent = this.dropdownPlaceholder;
+      }, 1500);
+        this.dropdownPlaceholder = '...הבחירה נמחקה';
+    }
         this.nameInput = '';
         this.timeInput = '';
-        this.isCancelClicked = true;
+        this.isChecked = false;       
       }
-  }
-
-  hideContainer(){
-
   }
 }

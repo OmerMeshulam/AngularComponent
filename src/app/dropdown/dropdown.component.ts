@@ -1,29 +1,18 @@
-import { Component, OnInit, EventEmitter, Input, Output, SimpleChange } from '@angular/core';
-
+import { Component, EventEmitter, Input, Output } from '@angular/core';
 
 @Component({
   selector: 'app-dropdown',
   templateUrl: './dropdown.component.html',
   styleUrls: ['./dropdown.component.css']
 })
-export class DropdownComponent implements OnInit {
-  isShowen = false;
-  dropdownIcon = 'fa-solid fa-chevron-down';
-  @Input() dropdownLabel: string = "";
-  @Input() dropdownData: string[] = []; 
-  dropdownPlaceholder: string = '';
-  @Output() onChoose = new EventEmitter<string>();
+export class DropdownComponent {
+  isDisplayed = false;
   selectedContent = '';
-  @Input() isCancelClicked: boolean = false;
-
-  ngOnChanges(changes: SimpleChange){
-    if (this.isCancelClicked) {
-      this.dropdownPlaceholder = this.dropdownData[0];
-    }    
-  }
-  ngOnInit() {
-    this.dropdownPlaceholder = this.dropdownData[0];
-  }  
+  dropdownIcon = 'fa-solid fa-chevron-down';
+  @Input() dropdownLabel: string = '';
+  @Input() dropdownData: string[] = []; 
+  @Input() dropdownPlaceholder: string = '';
+  @Output() dropdownPlaceholderChange = new EventEmitter<string>();
   toggleDropdown() {
     if(this.dropdownIcon == 'fa-solid fa-chevron-up'){
       this.dropdownIcon = 'fa-solid fa-chevron-down';
@@ -31,13 +20,13 @@ export class DropdownComponent implements OnInit {
     else{
     this.dropdownIcon = 'fa-solid fa-chevron-up';
     }
-    this.isShowen = !this.isShowen;    
+    this.isDisplayed = !this.isDisplayed;    
   }
   selectedData(contentIndex: number) {
     this.dropdownIcon = 'fa-solid fa-chevron-down';
-    this.isShowen = !this.isShowen;
+    this.isDisplayed = !this.isDisplayed;
     this.selectedContent = this.dropdownData[contentIndex];
     this.dropdownPlaceholder = this.selectedContent;
-    this.onChoose.emit(this.selectedContent);
+    this.dropdownPlaceholderChange.emit(this.dropdownPlaceholder);
   }
 }
