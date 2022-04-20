@@ -1,7 +1,5 @@
-<button (click)="selectHobbie()"><i class="fa-solid fa-chevron-down"></i> {{Text}} </button>
-<ul *ngIf="isShowen">
-    <li (click)="choosenHobbie($event.target)" data-value="לקרוא ספרים"><div class="dot">.</div>לקרוא ספרים</li>
-    <li (click)="choosenHobbie($event.target)" data-value="A.I"><div class="dot">.</div>A.I</li>
-    <li (click)="choosenHobbie($event.target)" data-value="רכיבה על אופניים"><div class="dot">.</div>רכיבה על אופניים</li>
-    <li (click)="choosenHobbie($event.target)" data-value="תכנות"><div class="dot">.</div>תכנות</li>
-</ul>
+<label for="">{{dropdownLabel}}</label>
+    <button id="dropdown" (click)="toggleDropdown()"><i class={{dropdownIcon}}></i> {{dropdownPlaceholder}} </button>
+        <ul *ngIf="isDisplayed">
+            <li *ngFor="let content of dropdownData; let i=index" (click)="selectedData(i)">{{content}}</li>
+        </ul>
