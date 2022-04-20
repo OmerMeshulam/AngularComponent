@@ -9,9 +9,9 @@
     <app-toggle [(isChecked)]="isChecked" class="toggle"></app-toggle>
   </div>
     <div class="button-section">
-    <app-button class="cancel-button" buttonTitle="ביטול" buttonId="cancel" (buttonClicked)="hasClicked($event)"></app-button>
+    <app-button class="cancel-button" buttonTitle="ביטול" buttonId="cancel" (buttonClicked)="cancelBtnClicked()"></app-button>
     <app-button 
-    (buttonClicked)="hasClicked($event)" 
+    (buttonClicked)="saveBtnClicked()" 
      buttonTitle="שמירה"
      buttonId="save"
      ></app-button>
