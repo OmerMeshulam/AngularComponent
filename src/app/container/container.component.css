@@ -9,6 +9,8 @@ p {
     color: var(--container-icon-color, antiquewhite);
     font-size: var(--container-icon-font-size, 12px);
     padding-right: 0.3rem;
+    padding-left: 0.3rem;
+    display: block;
     cursor: pointer;
 }
 .header-title {

@@ -1,6 +1,6 @@
 .container {
     width: 350px;
-    box-shadow: 2px 2px gray;
+    box-shadow: 4px 4px 4px 4px gray;
     border-radius: 5px 5px 5px 5px ;
 }
 hr {
@@ -30,4 +30,18 @@ hr {
     display: flex;
     padding-left: 0.4rem;
     padding-bottom: 1rem;
+}
+footer{
+text-align: center;
+font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+font-size: 14px;
+color: aliceblue;
+background-color: rgb(0, 0, 0);
+border-radius: 2px 2px 5px 5px ;
+transition: 0.3s ease-out;
+}
+footer:hover{
+    color: rgb(0, 255, 8);
+    transition: 0.3s ease-out;
+    -webkit-user-select: none;
 }

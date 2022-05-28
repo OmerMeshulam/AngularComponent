@@ -12,18 +12,19 @@ input {
     padding-left: 1rem;
     cursor: auto;
 }
-.input-section {
-    display: flex;
-    flex-direction: column;
-}
 .input-container {
     display: flex;
     align-items: flex-end;
     gap: 1rem;
     margin: 3vh 0 5vh 0;
 }
+.input-section {
+    display: flex;
+    flex-direction: column;
+}
 .inputIcon {
     color: var(--input-icon-color, rgb(22, 54, 194));
+    margin-left: 0.3rem;
 }
 label {
     color: gray;

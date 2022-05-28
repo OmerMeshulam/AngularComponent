@@ -1,11 +1,15 @@
-import { Component, EventEmitter, Input, Output } from '@angular/core';
+import { Component } from '@angular/core';
+import { FunctionsService } from './functions.service';
 
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
-  styleUrls: ['./app.component.css']
+  styleUrls: ['./app.component.css'],
+  providers: []
 })
 export class AppComponent {
+  constructor(private AppFunctions: FunctionsService) {
+  }
   title = 'targil';
   nameInput = '';
   timeInput = '';
@@ -17,35 +21,23 @@ export class AppComponent {
   dropdownContent = '';
   closeApp = false;
 
-  hasClicked(buttonId: string){
-    console.log(buttonId +' button Clicked...');
-    if(this.isChecked){
-      this.toggleContent = 'מחוסן';
-    }
-    else{
-    this.toggleContent = 'לא מחוסן';
-    }
-    if (buttonId === 'save') {
-        // Prevents logging the initial selected Placeholder...
-      if(this.dropdownPlaceholder === 'בחר תחביב'){
-        this.dropdownContent = '';
-      }
-      else {
-        this.dropdownContent = this.dropdownPlaceholder;
-      }
-      console.log('Your Name is: '+ this.nameInput +', the Time is: '+ this.timeInput +', your Hobbie is: '+ this.dropdownContent +', and you are: '+ this.toggleContent);  
-    }
-    if(buttonId === 'cancel'){
-      if(this.dropdownPlaceholder !== 'בחר תחביב'){
-      setTimeout(() => {
-        this.dropdownPlaceholder = 'בחר תחביב';
-        this.dropdownContent = this.dropdownPlaceholder;
+  saveBtnClicked() {
+    console.log('Save button was clicked...');
+    this.toggleContent = this.AppFunctions.setToggleContent(this.isChecked);
+    this.dropdownContent = this.AppFunctions.preventDefaultPlaceholder(this.dropdownPlaceholder);
+    this.AppFunctions.logData(this.nameInput, this.timeInput, this.dropdownContent, this.toggleContent);
+  }
+  cancelBtnClicked(){
+    console.log('Cancel button was clicked...');
+     //Creates a quick animation informing the user the content was deleted.
+    setTimeout(() => {
+        this.dropdownContent, this.dropdownPlaceholder = this.AppFunctions.resetDropdown(this.dropdownPlaceholder);
       }, 1500);
+      if(this.dropdownPlaceholder !== 'בחר תחביב'){
         this.dropdownPlaceholder = '...הבחירה נמחקה';
-    }
+      }
         this.nameInput = '';
         this.timeInput = '';
-        this.isChecked = false;       
+        this.isChecked = false;
       }
-  }
 }
