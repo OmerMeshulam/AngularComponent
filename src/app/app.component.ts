@@ -5,7 +5,7 @@ import { FunctionsService } from './functions.service';
   selector: 'app-root',
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.css'],
-  providers: [FunctionsService]
+  providers: []
 })
 export class AppComponent {
   constructor(private AppFunctions: FunctionsService) {
@@ -33,7 +33,9 @@ export class AppComponent {
     setTimeout(() => {
         this.dropdownContent, this.dropdownPlaceholder = this.AppFunctions.resetDropdown(this.dropdownPlaceholder);
       }, 1500);
+      if(this.dropdownPlaceholder !== 'בחר תחביב'){
         this.dropdownPlaceholder = '...הבחירה נמחקה';
+      }
         this.nameInput = '';
         this.timeInput = '';
         this.isChecked = false;

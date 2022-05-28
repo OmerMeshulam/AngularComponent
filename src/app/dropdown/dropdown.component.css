@@ -1,6 +1,7 @@
 button {
     display: flex;
     justify-content: space-between;
+    align-items: center;
     background-color: var(--dropdown-background-color, rgb(24, 22, 22));
     color: var(--dropdown-color, white);
     width: var(--dropdown-width, 180px);
@@ -8,7 +9,6 @@ button {
     border: var(--dropdown-border, 3px solid rgb(24, 22, 22));
     cursor: pointer;
     font-size: var(--dropdown-font-size, 15px);
-    transition: ease-in 1s;
 }
 
 ul{
